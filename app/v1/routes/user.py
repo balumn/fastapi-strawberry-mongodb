@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import List
 import strawberry
 
-from app.core.schemas.user import User
+from app.core.schemas.user import User, FullUser
 from app.v1.services.user import get_all_users_from_mongo, insert_user_to_mongo
 
 
@@ -13,7 +13,7 @@ class Query:
         return "Hello, Dobby here! Where do you wanna go ?"
 
     @strawberry.field
-    def all_users(self) -> List[User]:
+    def all_users(self) -> List[FullUser]:
         return get_all_users_from_mongo()
 
 

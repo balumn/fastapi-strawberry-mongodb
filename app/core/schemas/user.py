@@ -11,7 +11,8 @@ class User:
     updated_on: str
 
 
-class FullUserSchema(User):
+@strawberry.type
+class FullUser(User):
     _id: str
 
 
@@ -27,7 +28,8 @@ def user_to_dict(user: User):
 
 
 def user_from_dict(dict_data: dict):
-    return User(
+    return FullUser(
+        _id=dict_data.get("_id"),
         name=dict_data.get("name"),
         photo_url=dict_data.get("photo_url"),
         email_id=dict_data.get("email_id"),
