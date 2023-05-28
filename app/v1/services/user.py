@@ -3,7 +3,7 @@ from app.db import db
 
 
 def get_all_users_from_mongo():
-    users_collection = db["users"]  # Replace "users" with your actual collection name
+    users_collection = db["users"]
     users = users_collection.find()
     return [user_from_dict(user) for user in users]
 

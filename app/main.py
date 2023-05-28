@@ -8,25 +8,7 @@ from os import getenv
 
 from app.v1.routes.user import schema as user_schema
 
-# # override PyObjectId and Context scalars
-# from .models import PyObjectId
-# from .otypes import Context, PyObjectIdType
 
-
-# # create query types
-# Query = create_type("Query", [get_user])
-#
-# # create mutation types
-# Mutation = create_type("Mutation", [create_user])
-#
-#
-# # initialize federated schema
-# schema = strawberry.Schema(
-#     query=Query,
-#     mutation=Mutation
-# )
-
-# Get env variable of whether to run application in Debug Mode
 DEBUG = getenv("TEMPLATE_DEBUG", "false").lower() in ("true", "1", "t")
 
 # serve API with FastAPI router
